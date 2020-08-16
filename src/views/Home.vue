@@ -17,12 +17,11 @@
                             </div>
                             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
                                 <!-- <a class="dropdown-item" href="customer_orders.html">Order delivered </a> -->
-                                <router-link to="/" class="nav-link">Admin Dashboard</router-link>
                             </div>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="customer_orders.html">Orders</a>
+                            <router-link to="/orders" class="nav-link">Orders</router-link>
                         </li>
                         
                         <li class="nav-item">
@@ -61,7 +60,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <a class="no-style-link" href="restaurant1.html">
+                        <router-link to="/restaurant" class="no-style-link">
                             <img class="food-image" src="img/burger.jpg" alt="Generic placeholder image">
                             <br>
                             <div class="restaurant-label">
@@ -69,10 +68,10 @@
                                 <br>
                                 <text class="food-franchise-delivery">Delivery: $5</text>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                     <div class="col-sm">
-                        <a class="no-style-link" href="restaurant1.html">
+                        <router-link to="/restaurant" class="no-style-link">
                             <img class="food-image" src="img/sushi.jpg" alt="Generic placeholder image">
                             <br>
                             <div class="restaurant-label">
@@ -80,10 +79,10 @@
                                 <br>
                                 <text class="food-franchise-delivery">Delivery: $5</text>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                     <div class="col-sm">
-                        <a class="no-style-link" href="restaurant1.html">
+                        <router-link to="/restaurant" class="no-style-link">
                             <img class="food-image" src="img/pizza.jpg" alt="Generic placeholder image">
                             <br>
                             <div class="restaurant-label">
@@ -91,7 +90,7 @@
                                 <br>
                                 <text class="food-franchise-delivery">Delivery: $5</text>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
