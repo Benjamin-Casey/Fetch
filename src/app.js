@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './sass/style.sass'
+import router from './router';
+import './assets/sass/style.sass'
 
 new Vue({
     el: '#app',
-    render: h => h(App)
+    router: router,
+    components: { app: App },
+    render: h => h('app')
 })
