@@ -63,10 +63,10 @@
                         <router-link to="/restaurant" class="no-style-link">
                             <img class="food-image" src="img/burger.jpg" alt="Generic placeholder image">
                             <br>
-                            <div class="restaurant-label">
-                                <text>Restaurant 1</text>
+                            <div class="restaurant-label ">
+                                <label>Restaurant 1</label>
                                 <br>
-                                <text class="food-franchise-delivery">Delivery: $5</text>
+                                <label class="food-franchise-delivery">Delivery: $5</label>
                             </div>
                         </router-link>
                     </div>
@@ -75,9 +75,9 @@
                             <img class="food-image" src="img/sushi.jpg" alt="Generic placeholder image">
                             <br>
                             <div class="restaurant-label">
-                                <text class="food-franchise">Restaurant 2</text>
+                                <label class="food-franchise">Restaurant 2</label>
                                 <br>
-                                <text class="food-franchise-delivery">Delivery: $5</text>
+                                <label class="food-franchise-delivery">Delivery: $5</label>
                             </div>
                         </router-link>
                     </div>
@@ -86,9 +86,9 @@
                             <img class="food-image" src="img/pizza.jpg" alt="Generic placeholder image">
                             <br>
                             <div class="restaurant-label">
-                                <text class="food-franchise">Restaurant 3</text>
+                                <label class="food-franchise">Restaurant 3</label>
                                 <br>
-                                <text class="food-franchise-delivery">Delivery: $5</text>
+                                <label class="food-franchise-delivery">Delivery: $5</label>
                             </div>
                         </router-link>
                     </div>
@@ -101,7 +101,7 @@
         <section class = "py-5 page-content-2">
             <div class="container">
                 <div class="col-sm">
-                    <text>More advertising space here</text>
+                    <label>More advertising space here</label>
                 </div>
                 <div class="col-sm">
                     <img src="https://via.placeholder.com/800x500">
@@ -114,7 +114,7 @@
         <section class = "py-5 page-content-1">
             <div class="container">
                 <div class="col-sm">
-                    <text>Contact us, etc. here</text>
+                    <label>Contact us, etc. here</label>
                 </div>
             </div>
         </section>

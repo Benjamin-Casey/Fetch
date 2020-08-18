@@ -40,83 +40,30 @@
             <!-- Page Heading -->
             <h1 class="my-4 pt-5">Restaurant</h1>
 
-            <!-- Project One -->
-            <div class="row">
-                <div class="col-md-7">
-                    <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-                    </a>
+            <!-- Render products -->
+            <div v-for="product in allProducts" :key="product.id">
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>{{ product.title }}</h3>
+                        <p>{{ product.description }}</p>
+                        <p>${{ product.price }}</p>
+                        <button @click.prevent="addToCart(product)" class="btn btn-primary">Order</button>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <h3>Meal One</h3>
-                    <p>Meal Description</p>
-                    <p>Price:</p>
-                    <a class="btn btn-primary" href="#">Order</a>
-                </div>
+                <hr>
             </div>
-            <!-- /.row -->
-
-            <hr>
-
-            <!-- Project Two -->
-            <div class="row">
-                <div class="col-md-7">
-                    <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-5">
-                    <h3>Meal Two</h3>
-                    <p>Meal Description</p>
-                    <p>Price:</p>
-                    <a class="btn btn-primary" href="#">Order</a>
-                </div>
-            </div>
-            <!-- /.row -->
-
-            <hr>
-
-            <!-- Project Three -->
-            <div class="row">
-                <div class="col-md-7">
-                    <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-5">
-                    <h3>Meal Three</h3>
-                    <p>Meal Description</p>
-                    <p>Price:</p>
-                    <a class="btn btn-primary" href="#">Order</a>
-                </div>
-            </div>
-            <!-- /.row -->
-
-            <hr>
-
-            <!-- Project Four -->
-            <div class="row">
-
-                <div class="col-md-7 pb-5">
-                    <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-5">
-                    <h3>Meal Four</h3>
-                    <p>Meal Description</p>
-                    <p>Price:</p>
-                    <a class="btn btn-primary" href="#">Order</a>
-                </div>
-            </div>
-
         </div>
 
         <!-- Footer -->
         <section class = "py-5 page-content-1">
             <div class="container">
                 <div class="col-sm">
-                    <text>Contact us, etc. here</text>
+                    <label>Contact us, etc. here</label>
                 </div>
             </div>
         </section>
@@ -124,3 +71,13 @@
 
     </body>
 </template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+
+export default {
+    name: "Products",
+    computed:  mapGetters(['allProducts']),
+    methods: mapActions(['addToCart'])
+}
+</script>

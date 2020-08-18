@@ -67,49 +67,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row" class="border-0">
-                                                <div class="p-2">
-                                                    <img src="https://via.placeholder.com/70x70" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Burger</a></h5>
-                                                        <span class="text-muted font-weight-normal font-italic d-block">Restaurant 1</span>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                            <td class="border-0 align-middle"><strong>$30.00</strong></td>
-                                            <td class="border-0 align-middle"><strong>3</strong></td>
-                                            <td class="border-0 align-middle">
-                                            <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
+                                        
+                                        <tr v-for="e in allOrders" :key="e.id">
                                             <th scope="row">
                                                 <div class="p-2">
-                                                    <img src="https://via.placeholder.com/70x70" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Drinks</a></h5>
-                                                        <span class="text-muted font-weight-normal font-italic">Restaurant 2</span>
+                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">{{ e.title }}</a></h5>
+                                                        <span class="text-muted font-weight-normal font-italic">{{ e.restaurant }}</span>
                                                     </div>
                                                 </div>
                                             </th>
-                                            <td class="align-middle"><strong>$9.00</strong></td>
-                                            <td class="align-middle"><strong>3</strong></td>
-                                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="p-2">
-                                                    <img src="https://via.placeholder.com/70x70" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">French Fries </a></h5>
-                                                        <span class="text-muted font-weight-normal font-italic">Restauran 2</span>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                            <td class="align-middle"><strong>$15.00</strong></td>
-                                            <td class="align-middle"><strong>3</strong></td>
+                                            <td class="align-middle"><strong>${{ e.price }}</strong></td>
+                                            <td class="align-middle"><strong>{{ e.quantity }}</strong></td>
                                             <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -159,3 +128,11 @@
 
     </body>
 </template>
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+    name: "Orders",
+    computed:  mapGetters(['allOrders'])
+}
+</script>

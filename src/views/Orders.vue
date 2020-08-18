@@ -34,14 +34,12 @@
                 </div>
             </div>
         </nav>
-
         <div class="px-4 px-lg-0">
             <!-- For demo purpose -->
             <div class="container text-white pt-5 text-">
                 <h1 class="display-4">Orders</h1>                
             </div>
             <!-- End -->
-
             <div class="">
                 <div class="container">
                     <div class="row">
@@ -61,49 +59,19 @@
                                             <th scope="col" class="border-0 bg-light">
                                                 <div class="py-2 text-uppercase">Status</div>
                                             </th>
-                                            <!--
-                                            <th scope="col" class="border-0 bg-light">
-                                                <div class="py-2 text-uppercase">Remove</div>
-                                            </th>
-                                            -->
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for="e in allOrders" :key="e.id">
                                             <th scope="row">
                                                 <div class="p-2">
-                                                    
                                                     <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Order 1</a></h5>
+                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">{{ e.title }}</a></h5>
                                                     </div>
                                                 </div>
                                             </th>
-                                            <td class="align-middle"><strong>$30.00</strong></td>
-                                            <td class="align-middle"><strong>Success</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="p-2">
-                                                    
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Order 2</a></h5>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                            <td class="align-middle"><strong>$20.00</strong></td>
-                                            <td class="align-middle"><strong>Cancelled</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="p-2">
-                                                    
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Order 3</a></h5>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                            <td class="align-middle"><strong>$15.00</strong></td>
-                                            <td class="align-middle"><strong>Processing</strong></td>
+                                            <td class="align-middle"><strong>${{ e.price }}</strong></td>
+                                            <td class="align-middle"><strong>{{ e.status }}</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -116,3 +84,12 @@
         </div>
     </body>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+    name: "Orders",
+    computed: mapGetters(['allOrders'])
+}
+</script>
