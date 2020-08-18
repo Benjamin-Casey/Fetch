@@ -10,12 +10,14 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item avatar dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <span class="badge badge-danger ml-2">1</span>
+                            <div class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="badge badge-danger ml-2"> {{ numberOfOrders }}</span>
                                 <i class="fas fa-envelope"></i>
-                            </a>
+                            </div>
                             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
-                                <a class="dropdown-item" href="customer_orders.html">Order delivered </a>
+                                <div v-for="e in allOrders" :key="e.id">
+                                    <router-link to="/orders" class="dropdown-item">Order {{ e.id }} - {{ e.status }}</router-link>
+                                </div>
                             </div>
                         </li>
                         
@@ -90,6 +92,6 @@ import { mapGetters } from 'vuex'
 
 export default {
     name: "Orders",
-    computed: mapGetters(['allOrders'])
+    computed: mapGetters(['allOrders', 'numberOfOrders'])
 }
 </script>

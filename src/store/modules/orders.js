@@ -58,6 +58,9 @@ const getters = {
             price += product.price * product.quantity
         })
         return price
+    },
+    numberOfOrders(state) {
+        return state.orders.length
     }
 };
 
@@ -76,7 +79,6 @@ const actions = {
     addToOrders(context) {
         // Remove everything from cart, make it into an order.
         var cartPrice = document.getElementById('cart-total').innerText
-        console.log("Cart price is: "+cartPrice)
         context.commit('pushOrder', cartPrice)
         state.cart = []
     }

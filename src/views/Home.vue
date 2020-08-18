@@ -12,11 +12,13 @@
                         
                         <li class="nav-item avatar dropdown">
                             <div class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <span class="badge badge-danger ml-2">1</span>
+                                <span class="badge badge-danger ml-2"> {{ numberOfOrders }}</span>
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
-                                <a class="dropdown-item" href="customer_orders.html">Order delivered</a>
+                                <div v-for="e in allOrders" :key="e.id">
+                                    <router-link to="/orders" class="dropdown-item">Order {{ e.id }} - {{ e.status }}</router-link>
+                                </div>
                             </div>
                         </li>
                         
@@ -121,3 +123,12 @@
         <!-- Footer End -->
     </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+    name: "Home",
+    computed: mapGetters(['allOrders', 'numberOfOrders'])
+}
+</script>
