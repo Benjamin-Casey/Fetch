@@ -1,0 +1,5 @@
+I had several issues with functions doing strange things like
+calling multiple times on one button press in Restaurant.vue when
+trying to press the 'order' button and in Cart.vue when trying to
+place an order. I was hoping to get some feedback about this on 
+what is going wrong.

@@ -77,7 +77,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: "Products",
-    computed:  mapGetters(['allProducts']),
+    computed: mapGetters(['allProducts']),
     methods: mapActions(['addToCart'])
 }
 </script>

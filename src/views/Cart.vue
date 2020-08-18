@@ -68,7 +68,7 @@
                                     </thead>
                                     <tbody>
                                         
-                                        <tr v-for="e in allOrders" :key="e.id">
+                                        <tr v-for="e in cartProducts" :key="e.id">
                                             <th scope="row">
                                                 <div class="p-2">
                                                     <div class="ml-3 d-inline-block align-middle">
@@ -112,13 +112,14 @@
                             <div class="p-4">
                                 <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$0.00</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$0.00</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                        <h5 class="font-weight-bold">$400.00</h5>
+                                        <h5 class="font-weight-bold" id="cart-total">${{total}}</h5>
                                     </li>
-                                </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                                </ul>
+                                <button v-on:click="addToOrders" class="btn btn-dark rounded-pill py-2 btn-block">Checkout</button>
                             </div>
                         </div>
                     </div>
@@ -129,10 +130,19 @@
     </body>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-    name: "Orders",
-    computed:  mapGetters(['allOrders'])
+    name: "Cart",
+    methods: {
+        ...mapActions(['addToOrders'])
+    },
+    computed: {
+        ...mapGetters(['cartProducts']),
+        // Total price at checkout
+        total() {
+            return this.$store.getters.cartTotal
+        }
+    }
 }
 </script>

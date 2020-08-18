@@ -34,7 +34,7 @@
                 </div>
             </div>
         </nav>
-        <div class="px-4 px-lg-0">
+        <div class="px-4 px-lg-0 bg-dark">
             <!-- For demo purpose -->
             <div class="container text-white pt-5 text-">
                 <h1 class="display-4">Orders</h1>                
@@ -66,11 +66,11 @@
                                             <th scope="row">
                                                 <div class="p-2">
                                                     <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">{{ e.title }}</a></h5>
+                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Order {{ e.id }}</a></h5>
                                                     </div>
                                                 </div>
                                             </th>
-                                            <td class="align-middle"><strong>${{ e.price }}</strong></td>
+                                            <td class="align-middle"><strong>{{ e.price }}</strong></td>
                                             <td class="align-middle"><strong>{{ e.status }}</strong></td>
                                         </tr>
                                     </tbody>

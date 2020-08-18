@@ -16,7 +16,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
-                                <!-- <a class="dropdown-item" href="customer_orders.html">Order delivered </a> -->
+                                <a class="dropdown-item" href="customer_orders.html">Order delivered</a>
                             </div>
                         </li>
                         
